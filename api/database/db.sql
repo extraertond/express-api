@@ -1,6 +1,6 @@
-CREATE DATABASE db_links;
+CREATE DATABASE db_frameworks;
 
-USE db_links;
+USE db_frameworks;
 
 -- TABLE USER
 -- all pasword wil be encrypted using SHA1
@@ -15,7 +15,7 @@ ALTER TABLE users
   ADD PRIMARY KEY (id);
 
 ALTER TABLE users
-  MODIFY id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 2;
+  MODIFY id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1;
 
 DESCRIBE users;
 
@@ -25,9 +25,9 @@ INSERT INTO users (id, username, password, fullname)
 SELECT * FROM users;
 
 -- LINKS TABLE
-CREATE TABLE links (
+CREATE TABLE frameworks (
   id INT(11) NOT NULL,
-  title VARCHAR(150) NOT NULL,
+  name VARCHAR(150) NOT NULL,
   url VARCHAR(255) NOT NULL,
   description TEXT,
   user_id INT(11),
@@ -35,10 +35,10 @@ CREATE TABLE links (
   CONSTRAINT fk_user FOREIGN KEY(user_id) REFERENCES users(id)
 );
 
-ALTER TABLE links
+ALTER TABLE frameworks
   ADD PRIMARY KEY (id);
 
-ALTER TABLE links
-  MODIFY id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 2;
+ALTER TABLE frameworks
+  MODIFY id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1;
 
-DESCRIBE links;
+DESCRIBE frameworks;

@@ -1,0 +1,26 @@
+{
+  "name": "express-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "frontend": "cd frontend && yarn start",
+    "api": "cd api && npm run env"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/extraertond/express-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/extraertond/express-api/issues"
+  },
+  "homepage": "https://github.com/extraertond/express-api#readme",
+  "dependencies": {
+    "@types/react-router-dom": "^5.1.5",
+    "bootstrap": "^4.5.2",
+    "react-bootstrap": "^1.3.0",
+    "react-router-dom": "^5.2.0"
+  }
+}
