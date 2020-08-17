@@ -1,20 +1,46 @@
 import React from 'react';
-import { Route, Router } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 import './App.css';
-import FrameworksList from './views/FrameworksList';
+import FrameworksList from './views/Frameworks/FrameworksList';
 import TopNavbar from './components/navbar/Navbar';
-import h from './utils/auxiliar/AuxiliarHistory';
+import CreateFramework from './views/Frameworks/CreateFramework';
+import EditFramework from './views/Frameworks/EditFramework';
+import About from './views/others/About';
 
 function App() {
   return (
-    <Router history={h}>
+    <Router>
+    <div>
       <TopNavbar />
-        <Route
-          path="/frameworks"
-          exact={true}
-          component={FrameworksList}
-        />      
+      <Switch>
+
+      <Route exact path="/">
+          <About />
+        </Route>
+
+        <Route exact path="/frameworks">
+          <FrameworksList />
+        </Route>
+
+        <Route exact path="/editar/:id">
+          <EditFramework />
+        </Route>
+
+        <Route exact path="/agregar">
+          <CreateFramework />
+        </Route>
+
+        <Route exact path="/about">
+          <About />
+        </Route>
+      </Switch>
+    </div>
   </Router>
+  
   );
 }
 

@@ -10,8 +10,8 @@ const TopNavbar: React.FC = () => {
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
       <Nav.Link href="/frameworks">Frameworks</Nav.Link>
-      <Nav.Link href="/crear">Añadir</Nav.Link>
-      <Nav.Link href="/crear">Información del proyecto</Nav.Link>
+      <Nav.Link href="/agregar">Añadir</Nav.Link>
+      <Nav.Link href="/about">Información del proyecto</Nav.Link>
     </Nav>
 
   </Navbar.Collapse>

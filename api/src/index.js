@@ -1,5 +1,6 @@
 
 const express = require('express');
+const cors = require('cors');
 const morgan = require('morgan');
 const exphbs = require('express-handlebars');
 const path = require('path');
@@ -7,6 +8,8 @@ const { get } = require('http');
 
 // Inicialización
 const app = express();
+
+app.use(cors());
 
 // settings, configuraciones del servidor
 app.set('port', process.env.PORT || 4000);
@@ -35,7 +38,7 @@ app.use((req, res, next)=>{
 // Routes, aquí vamos a definir las urls de nuestro servidor
 app.use(require('./routes/index'));
 app.use(require('./routes/authentication'));
-app.use(require('./routes/frameworks'));
+app.use('/frameworks', require('./routes/frameworks'));
 // Public
 app.use(express.static(path.join(__dirname, 'public')));
 

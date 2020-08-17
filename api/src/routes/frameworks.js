@@ -3,58 +3,52 @@ const router = express.Router();
 
 const pool = require('../database');
 
-
-
-router.get('/add', (req, res) => {
-    res.render('links/add');
-});
-
-router.post('/add', async (req, res) => {
-    const { title, url, description } = req.body;
-
-    const newLink = {
-        title,
-        url,
-        description
-    };
-
-    await pool.query('INSERT INTO links set ?', [newLink]);
-
-    res.redirect('/links');
-});
-
-router.get('/frameworks', async (req, res) => {
+// GET ALL FRAMEWORKS FROM DATABASE DB_FRAMEWORKS
+router.get('/', async (req, res) => {
     pool.query('SELECT * FROM frameworks', (error, frameworks) => {
         if (error) throw error;
         res.send(frameworks);
     });
 });
 
-router.get('/delete/:id', async (req, res) => {
-    const { id } = req.params;
-    await pool.query('DELETE FROM links WHERE ID = ?', [id]);
-   // req.flash('success', 'Link Removed Successfully');
-    res.redirect('/links');
+// POST FRAMEWORK WITH AUTO_INCREMENT ID ON DB_FRAMEWORKS
+router.post('/', async (req, res) => {
+    const { name, url, description } = req.body;
+
+    const newFrame = {
+        name,
+        url,
+        description
+    };
+
+    const response = await pool.query('INSERT INTO frameworks set ?', [newFrame]);
+    res.send(response);
 });
 
-router.get('/edit/:id', async (req, res) => {
+
+// DELETE FRAMEWORK BY ID ON DB_FRAMEWORK
+router.delete('/delete/:id', async (req, res) => {
     const { id } = req.params;
-    const links = await pool.query('SELECT * FROM links WHERE id = ?', [id]);
-    console.log(links);
-    res.render('links/edit', {link: links[0]});
+    const response = await pool.query('DELETE FROM frameworks WHERE ID = ?', [id]);
+    res.send(response);
 });
 
-router.post('/edit/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     const { id } = req.params;
-    const { title, description, url} = req.body; 
-    const newLink = {
-        title,
+    const framework = await pool.query('SELECT * FROM frameworks WHERE id = ?', [id]);
+    res.send(framework[0]);
+});
+
+router.patch('/update/:id', async (req, res) => {
+    const { id } = req.params;
+    const { name, description, url} = req.body; 
+    const newFrame = {
+        name,
         description,
         url
     };
-    await pool.query('UPDATE links set ? WHERE id = ?', [newLink, id]);
-    // req.flash('success', 'Link Updated Successfully');
-    res.redirect('/links');
+    const response = await pool.query('UPDATE frameworks set ? WHERE id = ?', [newFrame, id]);
+    res.send(response);
 });
 
 module.exports = router;

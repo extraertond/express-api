@@ -1,8 +1,8 @@
 export default interface IFramework {
     id: number, 
     name: string,
-    description: Date,
+    description: string,
     url: string,
-    user_id: number,
-    created_at: Date
+    user_id?: number,
+    created_at?: Date
 }
