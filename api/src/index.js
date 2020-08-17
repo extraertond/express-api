@@ -35,7 +35,7 @@ app.use((req, res, next)=>{
 // Routes, aquí vamos a definir las urls de nuestro servidor
 app.use(require('./routes/index'));
 app.use(require('./routes/authentication'));
-app.use('/links', require('./routes/links'));
+app.use(require('./routes/frameworks'));
 // Public
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -47,13 +47,6 @@ app.listen(app.get('port'), ()=>{
 
 
 app.use(express.json());
-
-
-
-
-app.get('/about', (req, res) =>{
-    res.send("about tus muertos");
-});
 
 
 

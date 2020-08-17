@@ -23,11 +23,10 @@ router.post('/add', async (req, res) => {
     res.redirect('/links');
 });
 
-router.get('/', async (req, res) => {
-    pool.query('SELECT * FROM links', (error, links) => {
+router.get('/frameworks', async (req, res) => {
+    pool.query('SELECT * FROM frameworks', (error, frameworks) => {
         if (error) throw error;
- 
-        res.send(links);
+        res.send(frameworks);
     });
 });
 
