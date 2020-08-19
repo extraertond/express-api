@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a5ae5d4a.chunk.css",
+    "main.js": "/static/js/main.dbc5bd5d.chunk.js",
+    "main.js.map": "/static/js/main.dbc5bd5d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c8a21426.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c8a21426.js.map",
+    "static/css/2.11829350.chunk.css": "/static/css/2.11829350.chunk.css",
+    "static/js/2.3dcfffdd.chunk.js": "/static/js/2.3dcfffdd.chunk.js",
+    "static/js/2.3dcfffdd.chunk.js.map": "/static/js/2.3dcfffdd.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.36dd563379ea08de5465f32143ef9ac7.js": "/precache-manifest.36dd563379ea08de5465f32143ef9ac7.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.11829350.chunk.css.map": "/static/css/2.11829350.chunk.css.map",
+    "static/css/main.a5ae5d4a.chunk.css.map": "/static/css/main.a5ae5d4a.chunk.css.map",
+    "static/js/2.3dcfffdd.chunk.js.LICENSE.txt": "/static/js/2.3dcfffdd.chunk.js.LICENSE.txt",
+    "static/media/bootstrap-logo.png": "/static/media/bootstrap-logo.68fcf38c.png",
+    "static/media/mysql-logo.svg": "/static/media/mysql-logo.f80a91ba.svg",
+    "static/media/node-express-logo.png": "/static/media/node-express-logo.26bdcd15.png",
+    "static/media/react-logo.jpg": "/static/media/react-logo.e4fc4683.jpg",
+    "static/media/typescript-logo.svg": "/static/media/typescript-logo.c87187ca.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c8a21426.js",
+    "static/css/2.11829350.chunk.css",
+    "static/js/2.3dcfffdd.chunk.js",
+    "static/css/main.a5ae5d4a.chunk.css",
+    "static/js/main.dbc5bd5d.chunk.js"
+  ]
+}
